@@ -40,3 +40,31 @@ button:hover {
   padding: 10px;
   min-height: 50px;
 }
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.input-section, .result-section {
+  flex: 1;
+  padding: 10px;
+}
+
+#textInput {
+  width: 100%;
+  min-height: 150px;
+  margin-bottom: 10px;
+}
+
+.result-section {
+  overflow-y: auto;
+  max-height: 400px; /* Adjust this value as needed */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}

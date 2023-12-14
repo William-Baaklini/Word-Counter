@@ -7,11 +7,14 @@
   </head>
   <body>
     <div class="container">
-      <h1>Maya's Personal Word Counter</h1>
-      <textarea id="textInput" placeholder="Enter your text here..."></textarea>
-      <button id="countButton">Count Words</button>
-      <a id="downloadLink" style="display: none">Download CSV</a>
-      <div id="result"></div>
+        <div class="input-section">
+            <textarea id="textInput" placeholder="Enter your text here..."></textarea>
+            <button id="countButton">Count Words</button>
+            <a id="downloadLink" style="display: none;">Download CSV</a>
+        </div>
+        <div class="result-section">
+            <div id="resultTable"></div>
+        </div>
     </div>
     <script src="script.js"></script>
   </body>

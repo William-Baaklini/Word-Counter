@@ -14,6 +14,10 @@ document.getElementById('countButton').addEventListener('click', function() {
       }
   });
 
+  // Create and display results in a table
+  var resultTable = document.getElementById('resultTable');
+  resultTable.innerHTML = createTable(wordCount);
+
   // Generate CSV content
   var csvRows = ['Word,Count'];
   for (var word in wordCount) {
@@ -38,3 +42,13 @@ document.getElementById('countButton').addEventListener('click', function() {
   resultDiv.innerHTML = JSON.stringify(wordCount, null, 2);
 });
 
+function createTable(wordCount) {
+  var table = '<table><tr><th>Word</th><th>Count</th></tr>';
+  for (var word in wordCount) {
+      if (wordCount.hasOwnProperty(word)) {
+          table += '<tr><td>' + word + '</td><td>' + wordCount[word] + '</td></tr>';
+      }
+  }
+  table += '</table>';
+  return table;
+}
