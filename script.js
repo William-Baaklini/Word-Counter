@@ -2,7 +2,7 @@ document.getElementById('countButton').addEventListener('click', function() {
   var text = document.getElementById('textInput').value;
 
   // Remove punctuation and replace it with space
-  text = text.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g," ");
+  text = text.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()«»]/g," ");
   text = text.replace(/\s{2,}/g," ");
 
   var words = text.split(' ');
