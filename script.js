@@ -1,4 +1,4 @@
-document.getElementById("countButton").addEventListener("click", function () {
+function countWords() {
   var text = document.getElementById("textInput").value;
 
   // Remove punctuation and replace it with space
@@ -41,16 +41,20 @@ document.getElementById("countButton").addEventListener("click", function () {
     type: "text/csv;charset=utf-8;",
   });
 
-  // Create download link
   var link = document.getElementById("downloadLink");
-  link.href = URL.createObjectURL(blob);
-  link.download = "word_count.csv";
-  link.style.display = "block";
-  link.textContent = "Download CSV";
+  // Create download link
+  if (wordCountArray.length > 0) {
+    link.href = URL.createObjectURL(blob);
+    link.download = "word_count.csv";
+    link.style.display = "block";
+    link.textContent = "Download CSV";
+  } else {
+    link.style.display = "none";
+  }
 
   var resultCount = document.getElementById("word-count");
   resultCount.innerHTML = wordCountArray.length;
-});
+}
 
 function createTable(wordCountArray) {
   var table = "<table><tr><th>Word</th><th>Count</th></tr>";
@@ -62,3 +66,6 @@ function createTable(wordCountArray) {
   table += "</table>";
   return table;
 }
+
+document.getElementById("countButton").addEventListener("click", countWords);
+document.getElementById("textInput").addEventListener("input", countWords);
