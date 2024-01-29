@@ -48,7 +48,8 @@ button:hover {
   margin: 0 auto;
 }
 
-.input-section, .result-section {
+.input-section,
+.result-section {
   flex: 1;
   padding: 10px;
 }
@@ -64,7 +65,19 @@ button:hover {
   max-height: 400px; /* Adjust this value as needed */
 }
 
+/* styles.css */
 table {
-  width: 100%;
   border-collapse: collapse;
+  width: 100%;
+}
+
+table th,
+table td {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
