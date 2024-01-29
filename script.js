@@ -14,20 +14,17 @@ document.getElementById('countButton').addEventListener('click', function() {
       }
   });
 
-  // Convert wordCount object to an array and sort it
-  var sortedWordArray = Object.entries(wordCount).sort(function(a, b) {
-      return b[1] - a[1];
-  });
-
   // Create and display results in a table
   var resultTable = document.getElementById('resultTable');
-  resultTable.innerHTML = createTable(sortedWordArray);
+  resultTable.innerHTML = createTable(wordCount);
 
   // Generate CSV content
   var csvRows = ['Word,Count'];
-  sortedWordArray.forEach(function(wordPair) {
-      csvRows.push(wordPair[0] + ',' + wordPair[1]);
-  });
+  for (var word in wordCount) {
+      if (wordCount.hasOwnProperty(word)) {
+          csvRows.push(word + ',' + wordCount[word]);
+      }
+  }
   var csvString = csvRows.join('\n');
 
   // Create a Blob for CSV data
@@ -42,7 +39,7 @@ document.getElementById('countButton').addEventListener('click', function() {
 
   // Display results
   var resultDiv = document.getElementById('result');
-  resultDiv.innerHTML = JSON.stringify(Object.fromEntries(sortedWordArray), null, 2);
+  resultDiv.innerHTML = JSON.stringify(wordCount, null, 2);
 });
 
 function createTable(wordCount) {
