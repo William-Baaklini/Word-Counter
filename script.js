@@ -47,6 +47,9 @@ document.getElementById("countButton").addEventListener("click", function () {
   link.download = "word_count.csv";
   link.style.display = "block";
   link.textContent = "Download CSV";
+
+  var resultCount = document.getElementById("word-count");
+  resultCount.innerHTML = wordCountArray.length;
 });
 
 function createTable(wordCountArray) {

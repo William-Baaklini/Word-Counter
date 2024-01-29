@@ -81,3 +81,40 @@ table td {
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
+
+/* Add styles to the title container */
+.title-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Style the title text */
+.title {
+  font-size: 36px;
+  color: #333;
+}
+
+/* Style the counter number (this will be animated) */
+#word-count {
+  font-size: 28px;
+  color: #3d3d3d;
+  display: inline;
+}
+
+/* Add an animation for the counter number */
+#word-count.animated {
+  animation: pulse 1s infinite alternate;
+}
+
+/* Define the pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
